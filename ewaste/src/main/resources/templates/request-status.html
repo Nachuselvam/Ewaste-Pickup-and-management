@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Status</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: #f0f4f8;
+            margin: 0;
+            padding: 40px;
+            color: #333;
+        }
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+        .header {
+            text-align: center;
+            padding: 35px 25px;
+            color: white;
+            background: [[${approved} ? 'linear-gradient(135deg, #43a047, #2e7d32)' : 'linear-gradient(135deg, #e53935, #b71c1c)']];
+        }
+        .header .icon {
+            font-size: 65px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .body {
+            padding: 35px 30px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+        }
+        .status-box {
+            margin: 25px 0;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid [[${approved} ? '#c8e6c9' : '#ffcdd2']];
+            background: [[${approved} ? '#e8f5e9' : '#ffebee']];
+            color: [[${approved} ? '#2e7d32' : '#c62828']];
+        }
+        .reason {
+            margin: 20px 0;
+            padding: 18px;
+            background: #fff4f4;
+            border-left: 5px solid #d32f2f;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #c62828;
+        }
+        .btn {
+            display: inline-block;
+            margin: 25px 0 10px;
+            padding: 14px 28px;
+            background: [[${approved} ? '#43a047' : '#f44336']];
+            color: #fff !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: [[${approved} ? '#2e7d32' : '#d32f2f']];
+        }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+            padding: 20px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+        }
+        .footer a {
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="icon">[[${approved} ? '✅' : '❌']]</div>
+        <h1>Request [[${approved} ? 'Approved' : 'Rejected']]</h1>
+    </div>
+    <div class="body">
+        <p>Hello <strong>[[${userName}]]</strong>,</p>
+        <p>Your request has been reviewed and here’s the status:</p>
+
+        <div class="status-box">
+            Request ID: [[${requestId}]] <br>
+            Status: [[${approved} ? 'APPROVED' : 'REJECTED']]
+        </div>
+
+        <div th:if="${!approved}" class="reason">
+            <strong>Reason for Rejection:</strong><br>
+            [[${reason}]]
+        </div>
+
+        <p th:if="${approved}">
+            🎉 Congratulations! Your request has been approved. We’ll update you with the next steps shortly.
+        </p>
+        <p th:if="${!approved}">
+            Unfortunately, your request could not be approved this time. Please review the reason above and try again if applicable.
+        </p>
+
+        <a th:href="@{http://localhost:3000/user/requests}" class="btn">
+            [[${approved} ? 'View My Requests' : 'Submit Again']]
+        </a>
+    </div>
+    <div class="footer">
+        © 2025 Ewaste System | <a href="http://localhost:3000">Visit Website</a>
+    </div>
+</div>
+</body>
+</html>
