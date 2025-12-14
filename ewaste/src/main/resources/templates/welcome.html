@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Ewaste</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #eef2f6;
+            color: #333;
+        }
+
+        .email-container {
+            max-width: 680px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #e6ebf1;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32, #1B5E20);
+            color: #fff;
+            text-align: center;
+            padding: 50px 30px;
+        }
+        .header h1 {
+            margin: 15px 0 10px;
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .header .icon {
+            font-size: 70px;
+        }
+
+        .body {
+            padding: 40px 35px;
+            font-size: 16px;
+            line-height: 1.7;
+            color: #444;
+        }
+        .body p {
+            margin: 18px 0;
+        }
+
+        .highlight {
+            background: #f9fafc;
+            border: 1px solid #e0e6eb;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            font-size: 15px;
+        }
+        .highlight strong {
+            display: inline-block;
+            width: 140px;
+            color: #2e7d32;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #43a047, #2e7d32);
+            color: #ffffff !important;
+            padding: 15px 35px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 17px;
+            margin: 30px auto 0;
+            transition: 0.3s ease;
+            box-shadow: 0 6px 18px rgba(46,125,50,0.35);
+        }
+        .button:hover {
+            background: linear-gradient(135deg, #2e7d32, #1b5e20);
+            box-shadow: 0 8px 22px rgba(27,94,32,0.45);
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            padding: 25px;
+            border-top: 1px solid #eee;
+            background: #fafafa;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: 640px) {
+            .email-container { margin: 20px; }
+            .header h1 { font-size: 26px; }
+            .body { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <div class="header">
+        <div class="icon">🌍</div>
+        <h1>Welcome, [[${name}]] 🎉</h1>
+        <p>You’ve joined Ewaste System – let’s build a cleaner planet together!</p>
+    </div>
+
+    <div class="body">
+        <p>Hi <strong>[[${name}]]</strong>,</p>
+        <p>We’re thrilled to have you onboard! With <strong>Ewaste System</strong>, you can:</p>
+        <ul>
+            <li>♻️ Schedule and track e-waste pickups easily</li>
+            <li>🌱 Contribute to a greener environment</li>
+            <li>🔒 Securely manage your account</li>
+        </ul>
+
+        <div class="highlight">
+            <p><strong>Login Email:</strong> [[${email}]]</p>
+            <p><strong>Password:</strong> [[${password}]]</p>
+        </div>
+
+        <p style="text-align:center;">
+            <a href="http://localhost:3000/login" class="button">🚀 Get Started</a>
+        </p>
+    </div>
+
+    <div class="footer">
+        © 2025 Ewaste System • <a href="http://localhost:3000">Visit Website</a>
+    </div>
+</div>
+</body>
+</html>
