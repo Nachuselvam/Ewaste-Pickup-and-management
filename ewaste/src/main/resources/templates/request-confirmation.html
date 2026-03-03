@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Request Submitted</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e6f0ff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            max-width: 650px;
+            margin: 50px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-top: 5px solid #FF9800;
+        }
+        .header {
+            background: linear-gradient(90deg, #FF9800, #FFB74D);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+        .body {
+            padding: 30px;
+            line-height: 1.6;
+            color: #333333;
+        }
+        .body p {
+            margin: 15px 0;
+        }
+        .details {
+            background-color: #f0f4f8;
+            border-left: 5px solid #FF9800;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        .btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 25px;
+            background-color: #FF9800;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #FFB74D;
+        }
+        .footer {
+            text-align: center;
+            font-size: 13px;
+            color: #888888;
+            padding: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer a {
+            color: #FF9800;
+            text-decoration: none;
+        }
+        .checkmark {
+            font-size: 50px;
+            color: #4CAF50;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h2>Request Submitted Successfully!</h2>
+    </div>
+    <div class="body">
+        <div class="checkmark">✅</div>
+        <p>Hello <strong>[[${userName}]]</strong>,</p>
+        <p>Your e-waste request has been successfully submitted. 🎉</p>
+        <div class="details">
+            Request ID: <strong>[[${requestId}]]</strong>
+        </div>
+        <p>We’ll notify you once your request is approved and scheduled.</p>
+        <a href="http://localhost:3000/dashboard" class="btn">View My Requests</a>
+        <p>Thank you for contributing to a cleaner and sustainable environment!</p>
+    </div>
+    <div class="footer">
+        Ewaste System Team<br>
+        <a href="http://localhost:3000">www.ewaste-system.com</a>
+    </div>
+</div>
+</body>
+</html>
