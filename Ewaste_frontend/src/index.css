@@ -1,0 +1,82 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.8rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+
+.nav-logo img {
+  width: 40px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #4CAF50;
+}
+
+/* Login & Register buttons */
+.btn-login, .btn-register {
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.btn-login {
+  background: white;
+  color: #333;
+}
+
+.btn-register {
+  background: #4CAF50;
+  color: white;
+}
+
+.btn-login:hover {
+  background: #ddd;
+}
+
+.btn-register:hover {
+  background: #45a049;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.footer-links a {
+  color: #4CAF50;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
